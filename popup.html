@@ -18,8 +18,8 @@
 <div ng-controller="ExtensionController as extensionCtrl">
     <ul>
         <li ng-repeat="repo in extensionCtrl.repos">
-            <div>Repo Name:- {{repo['name']}}</div>
-            <div>Repo Url:- {{repo['git_url']}}</div>
+            <div>Repo Name:- {{repo['name']}}
+                <a ng-href={{repo['svn_url']}}>Repo Url</a></div>
         </li>
     </ul>
 </div>
