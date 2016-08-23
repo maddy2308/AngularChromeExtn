@@ -9,9 +9,9 @@
             getRepositories: getRepositories
         };
 
-        function getRepositories() {
+        function getRepositories(username) {
             var deferred = $q.defer();
-            $http.get("https://api.github.com/users/maddy2308/repos")
+            $http.get("https://api.github.com/users/" + username + "/repos")
                 .then(function (response) {
                     deferred.resolve(response.data);
                 }).catch(function (error) {

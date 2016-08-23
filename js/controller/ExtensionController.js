@@ -7,8 +7,16 @@
         var vm = this;
 
         vm.message = "Hello From AngularJS";
+        vm.username = 'maddy2308';
 
-        gitHubService.getRepositories().then(successResponse, errorResponse);
+        vm.getRepositories = getRepositories;
+
+        function getRepositories(username) {
+            if (!username) {
+                username = vm.username;
+            }
+            gitHubService.getRepositories(username).then(successResponse, errorResponse);
+        }
 
         function successResponse(response) {
             vm.repos = response;
